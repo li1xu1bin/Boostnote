@@ -108,7 +108,7 @@ class SideNav extends React.Component {
             handleFilterButtonContextMenu={this.handleFilterButtonContextMenu.bind(this)}
           />
 
-          <StorageList storageList={storageList} />
+          <StorageList storageList={storageList} isFolded={isFolded} />
           <NavToggleButton isFolded={isFolded} handleToggleButtonClick={this.handleToggleButtonClick.bind(this)} />
         </div>
       )
@@ -139,7 +139,7 @@ class SideNav extends React.Component {
           <TagListItem
             name={tag.name}
             handleClickTagListItem={this.handleClickTagListItem.bind(this)}
-            isActive={this.getTagActive(location.pathname, tag)}
+            isActive={this.getTagActive(location.pathname, tag.name)}
             key={tag.name}
             count={tag.size}
           />
